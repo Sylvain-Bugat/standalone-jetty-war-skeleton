@@ -1,0 +1,238 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- Required Maven version can be upgraded to 3.* if needed by a dependency or a plugin -->
+	<prerequisites>
+		<maven>2.2.1</maven>
+	</prerequisites>
+
+	<modelVersion>4.0.0</modelVersion>
+	<!-- Change the groupId, artifactId, version and name for your project -->
+	<groupId>com.github.sbugat</groupId>
+	<artifactId>standalone-jetty-war-skeleton</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>Sample webapp skeleton</name>
+
+	<!-- Global properties -->
+	<properties>
+		<!-- Source Encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- JDK/JRE Version -->
+		<!-- Java version can be upgraded to 1.6, 1.7, ... -->
+		<maven.compiler.source>1.5</maven.compiler.source>
+		<maven.compiler.target>1.5</maven.compiler.target>
+
+		<!-- Jetty version-->
+		<jetty.version>9.2.5.v20141112</jetty.version>
+
+		<!-- Dependencies version properties-->
+		<!--<maven.artifactId.version>X.Y.Z</maven.artifactId.version>-->
+
+		<!-- Maven Lifecycle Plugins Version -->
+		<maven.pluginclean.version>2.6.1</maven.pluginclean.version>
+		<maven.plugininstall.version>2.5.2</maven.plugininstall.version>
+		<maven.pluginsite.version>3.4</maven.pluginsite.version>
+		<maven.plugincompiler.version>3.2</maven.plugincompiler.version>
+		<maven.pluginsurefire.version>2.18</maven.pluginsurefire.version>
+		<maven.pluginversions.version>2.1</maven.pluginversions.version>
+		<maven.pluginwar.version>2.5</maven.pluginwar.version>
+		<maven.pluginresources.version>2.7</maven.pluginresources.version>
+		<maven.plugindeploy.version>2.8.2</maven.plugindeploy.version>
+		<maven.pluginassembly.version>2.5.1</maven.pluginassembly.version>
+		<maven.plugindependency.version>2.9</maven.plugindependency.version>
+		<maven.pluginantrun.version>1.7</maven.pluginantrun.version>
+	</properties>
+	
+	<!-- Dependencies -->
+	<dependencies>
+
+		<!-- Jetty dependencies -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>${jetty.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>${jetty.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jsp</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+
+		<!-- Add here all dependencies needed for your project -->
+		<!--<dependency>
+			<groupId>groupId</groupId>
+			<artifactId>artifactId</artifactId>
+			<version>${artifactId.version}</version>
+		</dependency>-->
+	</dependencies>
+
+	<!-- Profiles -->
+	<profiles>
+		<profile>
+			<!-- Default profile -->
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<build>
+				<plugins>
+
+					<!-- Compiler plugin configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>${maven.plugincompiler.version}</version>
+						<configuration>
+							<compilerVersion>${maven.compiler.source}</compilerVersion>
+							<source>${maven.compiler.source}</source>
+							<target>${maven.compiler.target}</target>
+							<compilerArgs>
+								<arg>-Xlint</arg>
+							</compilerArgs>
+						</configuration>
+					</plugin>
+
+					<!-- Install plugin configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-install-plugin</artifactId>
+						<version>${maven.plugininstall.version}</version>
+					</plugin>
+
+					<!-- Clean plugin configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-clean-plugin</artifactId>
+						<version>${maven.pluginclean.version}</version>
+					</plugin>
+
+					<!-- Clean plugin configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-site-plugin</artifactId>
+						<version>${maven.pluginsite.version}</version>
+					</plugin>
+
+					<!-- Testing Launcher plugin configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>${maven.pluginsurefire.version}</version>
+					</plugin>
+
+					<!-- Deploy plugin configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-deploy-plugin</artifactId>
+						<version>${maven.plugindeploy.version}</version>
+					</plugin>
+
+					<!-- Resources plugin configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>${maven.pluginresources.version}</version>
+					</plugin>
+
+					<!-- Jar Plugin configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>${maven.pluginwar.version}</version>
+						 <configuration>
+							<archive>
+								<manifest>
+									<mainClass>Main</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</plugin>
+
+					<!-- Antrun plugin configuration -->
+					<!-- Copy the main class to the root war directory -->
+					 <plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>${maven.pluginantrun.version}</version>
+						<executions>
+							<execution>
+								<id>main-class-placement</id>
+								<phase>prepare-package</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<move todir="${project.build.directory}/${project.artifactId}-${project.version}/">
+											<fileset dir="${project.build.directory}/classes/">
+												<include name="Main.class" />
+											</fileset>
+										</move>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					
+					<!-- Dependecy plugin configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<version>${maven.plugindependency.version}</version>
+						<executions>
+							<execution>
+								<id>jetty-classpath</id>
+								<phase>prepare-package</phase>
+								<goals>
+									<goal>unpack-dependencies</goal>
+								</goals>
+								<configuration>
+									<includeGroupIds>org.eclipse.jetty,javax.servlet</includeGroupIds>
+									<excludeArtifactIds>javax.servlet.jsp-api</excludeArtifactIds>
+									<excludes>META-INF/ECLIPSEF.*</excludes>
+									<outputDirectory>
+										${project.build.directory}/${project.artifactId}-${project.version}
+									</outputDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- Dependencies checker profile -->
+		<!-- Dependencies and plugins versions can be checked with the maven command: mvn versions:display-plugin-updates  versions:display-property-updates -P default,dependencies.check -->
+		<profile>
+			<id>dependencies.check</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>versions-maven-plugin</artifactId>
+						<version>${maven.pluginversions.version}</version>
+						<executions>
+							<execution>
+								<configuration>
+									<comparisonmethod>mercury</comparisonmethod>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>
