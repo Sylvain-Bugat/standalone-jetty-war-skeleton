@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
  * Sample class of a web-app servlet
  *
  * @author Sylvain Bugat
- *
  */
 public class SampleWebapp extends HttpServlet {
 
@@ -20,7 +19,7 @@ public class SampleWebapp extends HttpServlet {
 	@Override
 	protected void doGet(final HttpServletRequest httpServletRequest, final HttpServletResponse httpServletResponse) throws ServletException, IOException {
 
-		System.out.println("SampleWebapp doGet on:" + httpServletRequest.getRequestURI());
+		System.out.println("SampleWebapp class: doGet method called on:" + httpServletRequest.getRequestURI());
 		httpServletRequest.setAttribute("requestedURI", httpServletRequest.getRequestURI());
 		// Redirect all get request to index.jsp page
 		httpServletRequest.getRequestDispatcher("/index.jsp").forward(httpServletRequest, httpServletResponse);
