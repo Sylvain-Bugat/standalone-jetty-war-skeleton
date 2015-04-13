@@ -26,7 +26,7 @@
 		<maven.compiler.target>1.5</maven.compiler.target>
 
 		<!-- Jetty version-->
-		<jetty.version>9.2.7.v20150116</jetty.version>
+		<jetty.version>9.2.10.v20150310</jetty.version>
 
 		<!-- Dependencies version properties-->
 		<!--<maven.artifactId.version>X.Y.Z</maven.artifactId.version>-->
@@ -66,6 +66,7 @@
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-jsp</artifactId>
 			<version>${jetty.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Add here all dependencies needed for your project -->
@@ -185,7 +186,7 @@
 						</executions>
 					</plugin>
 					
-					<!-- Dependecy plugin configuration -->
+					<!-- Dependency plugin configuration -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-dependency-plugin</artifactId>
