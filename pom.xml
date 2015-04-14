@@ -65,6 +65,11 @@
 			<artifactId>jetty-jsp</artifactId>
 			<version>${jetty.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-annotations</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
 
 		<!-- Add here all dependencies needed for your project -->
 		<!--<dependency>
