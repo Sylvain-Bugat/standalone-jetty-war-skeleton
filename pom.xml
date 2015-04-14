@@ -54,19 +54,21 @@
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-webapp</artifactId>
 			<version>${jetty.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-server</artifactId>
 			<version>${jetty.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-jsp</artifactId>
 			<version>${jetty.version}</version>
-			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-annotations</artifactId>
+			<version>${jetty.version}</version>
 		</dependency>
 
 		<!-- Add here all dependencies needed for your project -->
@@ -185,7 +187,7 @@
 							</execution>
 						</executions>
 					</plugin>
-					
+
 					<!-- Dependency plugin configuration -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -199,8 +201,6 @@
 									<goal>unpack-dependencies</goal>
 								</goals>
 								<configuration>
-									<includeGroupIds>org.eclipse.jetty,javax.servlet</includeGroupIds>
-									<excludeArtifactIds>javax.servlet.jsp-api</excludeArtifactIds>
 									<excludes>META-INF/ECLIPSEF.*</excludes>
 									<outputDirectory>
 										${project.build.directory}/${project.artifactId}-${project.version}
