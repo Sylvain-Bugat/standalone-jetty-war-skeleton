@@ -177,7 +177,7 @@
 								</goals>
 								<configuration>
 									<tasks>
-										<move todir="${project.build.directory}/${project.artifactId}-${project.version}/">
+										<move todir="${project.build.directory}/${project.build.finalName}/">
 											<fileset dir="${project.build.directory}/classes/">
 												<include name="Main.class" />
 											</fileset>
@@ -203,7 +203,7 @@
 								<configuration>
 									<excludes>META-INF/ECLIPSEF.*</excludes>
 									<outputDirectory>
-										${project.build.directory}/${project.artifactId}-${project.version}
+										${project.build.directory}/${project.build.finalName}
 									</outputDirectory>
 								</configuration>
 							</execution>
