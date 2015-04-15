@@ -22,8 +22,13 @@ public class SampleWebapp extends HttpServlet {
 	protected void doGet(final HttpServletRequest httpServletRequest, final HttpServletResponse httpServletResponse) throws ServletException, IOException {
 
 		System.out.println("SampleWebapp class: doGet method called on:" + httpServletRequest.getRequestURI());
+		String argumentValue = httpServletRequest.getParameter("argument");
+		if (null == argumentValue || argumentValue.isEmpty()) {
+			argumentValue = "redirect";
+		}
+
+		// Forward all get request to test-el.jsp page with the argument value or redirect by default
 		httpServletRequest.setAttribute("requestedURI", httpServletRequest.getRequestURI());
-		// Redirect all get request to index.jsp page
-		httpServletRequest.getRequestDispatcher("/index.html").forward(httpServletRequest, httpServletResponse);
+		httpServletRequest.getRequestDispatcher("/test-el.jsp?argument=" + argumentValue).forward(httpServletRequest, httpServletResponse);
 	}
 }
