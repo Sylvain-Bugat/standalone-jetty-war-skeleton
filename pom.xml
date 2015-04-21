@@ -181,13 +181,13 @@
 									<goal>run</goal>
 								</goals>
 								<configuration>
-									<tasks>
+									<target>
 										<move todir="${project.build.directory}/${project.build.finalName}/">
 											<fileset dir="${project.build.directory}/classes/">
 												<include name="Main.class" />
 											</fileset>
 										</move>
-									</tasks>
+									</target>
 								</configuration>
 							</execution>
 						</executions>
