@@ -18,21 +18,23 @@ public class Main {
 		classList.addBefore("org.eclipse.jetty.webapp.JettyWebXmlConfiguration", "org.eclipse.jetty.annotations.AnnotationConfiguration"); //$NON-NLS-1$ //$NON-NLS-2$
 
 		// Add a connector to open a port
-		final NetworkTrafficServerConnector connector = new NetworkTrafficServerConnector(server);
-		connector.setPort(8080);
-		server.addConnector(connector);
+		try (final NetworkTrafficServerConnector connector = new NetworkTrafficServerConnector(server)) {
 
-		// Get the current class URL to add the current packaged war
-		final ProtectionDomain mainDomain = Main.class.getProtectionDomain();
-		final URL location = mainDomain.getCodeSource().getLocation();
+			connector.setPort(8080);
+			server.addConnector(connector);
 
-		// Add the war location to the context, the default context path is /
-		final WebAppContext webAppContext = new WebAppContext();
-		webAppContext.setWar(location.toExternalForm());
-		server.setHandler(webAppContext);
+			// Get the current class URL to add the current packaged war
+			final ProtectionDomain mainDomain = Main.class.getProtectionDomain();
+			final URL location = mainDomain.getCodeSource().getLocation();
 
-		// Start the Jetty server
-		server.start();
-		server.join();
+			// Add the war location to the context, the default context path is /
+			final WebAppContext webAppContext = new WebAppContext();
+			webAppContext.setWar(location.toExternalForm());
+			server.setHandler(webAppContext);
+
+			// Start the Jetty server
+			server.start();
+			server.join();
+		}
 	}
 }
