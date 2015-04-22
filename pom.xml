@@ -55,7 +55,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Maven version -->
-		<maven.version>2.2.1</maven.version>
+		<maven.version>3.0.1</maven.version>
 
 		<!-- JDK/JRE Version -->
 		<!-- Java version can be upgraded to 1.8, ... -->
