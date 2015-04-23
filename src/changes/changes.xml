@@ -34,7 +34,7 @@
 			<action type='add' dev='Sylvain-Bugat'>Add Jetty JSP support</action>
 			<action type='add' dev='Sylvain-Bugat'>Add Jetty JSTL support</action>
 			<action type='add' dev='Sylvain-Bugat'>Add standalone war</action>
-			<action type='add' dev='Sylvain-Bugat'>Add annoted sample servlet</action>
+			<action type='add' dev='Sylvain-Bugat'>Add annotated sample servlet</action>
 		</release>
 	</body>
 </document>

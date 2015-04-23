@@ -59,7 +59,6 @@
 		</breadcrumbs>
 		<menu name="${project.name}">
 			<item name="Introduction" href="index.html" />
-			<item name="FAQ" href="faq.html" />
 			<item name="Changelog" href="changes-report.html" />
 		</menu>
 		<menu ref="reports" />
