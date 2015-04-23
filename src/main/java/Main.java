@@ -6,8 +6,19 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.Configuration.ClassList;
 import org.eclipse.jetty.webapp.WebAppContext;
 
+/**
+ * Jetty main launcher class.
+ * 
+ * @author Sylvain Bugat
+ */
 public class Main {
 
+	/**
+	 * Launcher and program main method.
+	 * 
+	 * @param args program arguments
+	 * @throws Exception thrown by Jetty
+	 */
 	public static void main(final String[] args) throws Exception {
 
 		// Jetty server

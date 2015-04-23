@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Sample class of a web-app servlet
+ * Sample class of a web-app servlet.
  * 
  * @author Sylvain Bugat
  */
 @WebServlet("/redirect")
 public class SampleWebapp extends HttpServlet {
 
+	/** Serialization identifier. */
 	private static final long serialVersionUID = 1997452078400181160L;
 
 	@Override
