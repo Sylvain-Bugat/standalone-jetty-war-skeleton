@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Sylvain Bugat
  */
 @WebServlet("/redirect")
-public class SampleWebapp extends HttpServlet {
+public final class SampleWebapp extends HttpServlet {
 
 	/** Serialization identifier. */
 	private static final long serialVersionUID = 1997452078400181160L;
