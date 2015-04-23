@@ -1,6 +1,6 @@
 # Standalone Jetty WAR skeleton
 
-Standalone Jetty WAR skeleton is an autonomous war which launch an embeded Jeddy with JSP and JSTL support.
+Standalone Jetty WAR skeleton is an autonomous war which launch an embeded Jetty with JSP and JSTL support.
 
 ***
 
