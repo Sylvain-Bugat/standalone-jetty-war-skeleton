@@ -12,7 +12,7 @@
 	<groupId>com.github.sbugat</groupId>
 	<artifactId>standalone-jetty-war-skeleton</artifactId>
 	<packaging>war</packaging>
-	<version>1.0</version>
+	<version>1.1-SNAPSHOT</version>
 	<name>Sample webapp skeleton</name>
 	<inceptionYear>2014</inceptionYear>
 	<url>https://github.com/Sylvain-Bugat/standalone-jetty-war-skeleton</url>
@@ -325,7 +325,7 @@
 						<checkinComment>Publishing Site Docs for ${project.artifactId}:${project.version}</checkinComment>
 						<content>${project.reporting.outputDirectory}</content>
 						<skipDeletedFiles>true</skipDeletedFiles>
-						<pubScmUrl>scm:git:git@github.com:Sylvain-Bugat/aws-ec2-start-stop-tools.git</pubScmUrl>
+						<pubScmUrl>scm:git:git@github.com:Sylvain-Bugat/standalone-jetty-war-skeleton.git</pubScmUrl>
 						<scmBranch>gh-pages</scmBranch>
 					</configuration>
 				</plugin>
