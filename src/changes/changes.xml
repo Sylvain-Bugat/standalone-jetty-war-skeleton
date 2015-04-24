@@ -30,6 +30,9 @@
 		<author>Sylvain Bugat</author>
 	</properties>
 	<body>
+		<release date='2015-??-??' description='Standalone Jetty war skeleton version 1.1' version='1.1'>
+			<action type='add' dev='Sylvain-Bugat'>Add unified logger with logback/SLF4j and jcl/log4j bridges</action>
+		</release>
 		<release date='2015-04-23' description='Standalone Jetty war skeleton version 1.0' version='1.0'>
 			<action type='add' dev='Sylvain-Bugat'>Add Jetty JSP support</action>
 			<action type='add' dev='Sylvain-Bugat'>Add Jetty JSTL support</action>

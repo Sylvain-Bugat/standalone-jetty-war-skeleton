@@ -40,7 +40,7 @@ public final class SampleWebapp extends HttpServlet {
 		httpServletRequest.setAttribute("requestedURI", httpServletRequest.getRequestURI()); //$NON-NLS-1$
 		httpServletRequest.getRequestDispatcher("/test-el.jsp?argument=" + argumentValue).forward(httpServletRequest, httpServletResponse); //$NON-NLS-1$
 
-		LOG.info("Redirec to: /test-el.jsp?argument={}", argumentValue); //$NON-NLS-1$
+		LOG.info("Redirect to: /test-el.jsp?argument={}", argumentValue); //$NON-NLS-1$
 
 		LOG.exit();
 	}
