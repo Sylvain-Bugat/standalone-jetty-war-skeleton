@@ -5,6 +5,8 @@ import org.eclipse.jetty.server.NetworkTrafficServerConnector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.Configuration.ClassList;
 import org.eclipse.jetty.webapp.WebAppContext;
+import org.slf4j.ext.XLogger;
+import org.slf4j.ext.XLoggerFactory;
 
 /**
  * Jetty main launcher class.
@@ -13,6 +15,9 @@ import org.eclipse.jetty.webapp.WebAppContext;
  */
 public class Main {
 
+	/** SLF4J XLogger. */
+	private static final XLogger LOG = XLoggerFactory.getXLogger(Main.class);
+
 	/**
 	 * Launcher and program main method.
 	 * 
@@ -20,6 +25,8 @@ public class Main {
 	 * @throws Exception thrown by Jetty
 	 */
 	public static void main(final String[] args) throws Exception {
+
+		LOG.entry((Object[]) args);
 
 		// Jetty server
 		final Server server = new Server();
@@ -47,5 +54,7 @@ public class Main {
 			server.start();
 			server.join();
 		}
+
+		LOG.exit();
 	}
 }
