@@ -63,7 +63,7 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 
 		<!-- Jetty version-->
-		<jetty.version>9.2.11.v20150529</jetty.version>
+		<jetty.version>9.3.0.v20150612</jetty.version>
 
 		<!-- Log Frameworks Version -->
 		<slf4j.version>1.7.12</slf4j.version>
