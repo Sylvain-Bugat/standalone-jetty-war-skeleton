@@ -57,10 +57,15 @@
 		<!-- Maven version -->
 		<maven.version>3.0.1</maven.version>
 
-		<!-- JDK/JRE Version -->
+		<!-- Java version and compiler options-->
 		<!-- Java version can be upgraded to 1.8, ... -->
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.fork>true</maven.compiler.fork>
+		<maven.compiler.compilerVersion>${maven.compiler.source}</maven.compiler.compilerVersion>
+		<maven.compiler.optimize>true</maven.compiler.optimize>
+		<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+		<maven.compiler.showWarnings>true</maven.compiler.showWarnings>
 
 		<!-- Jetty version-->
 		<jetty.version>9.3.0.v20150612</jetty.version>
@@ -180,9 +185,6 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.plugincompiler.version}</version>
 				<configuration>
-					<compilerVersion>${maven.compiler.source}</compilerVersion>
-					<source>${maven.compiler.source}</source>
-					<target>${maven.compiler.target}</target>
 					<compilerArgs>
 						<arg>-Xlint</arg>
 					</compilerArgs>
