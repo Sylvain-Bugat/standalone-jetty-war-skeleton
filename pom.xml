@@ -68,7 +68,7 @@
 		<maven.compiler.showWarnings>true</maven.compiler.showWarnings>
 
 		<!-- Jetty version-->
-		<jetty.version>9.3.5.v20151012</jetty.version>
+		<jetty.version>9.3.6.v20151106</jetty.version>
 
 		<!-- Log Frameworks Version -->
 		<slf4j.version>1.7.13</slf4j.version>
