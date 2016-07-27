@@ -83,7 +83,7 @@
 		<maven.pluginsite.version>3.5.1</maven.pluginsite.version>
 		<maven.plugincompiler.version>3.5.1</maven.plugincompiler.version>
 		<maven.pluginsurefire.version>2.19.1</maven.pluginsurefire.version>
-		<maven.pluginversions.version>2.2</maven.pluginversions.version>
+		<maven.pluginversions.version>2.3</maven.pluginversions.version>
 		<maven.pluginwar.version>2.6</maven.pluginwar.version>
 		<maven.pluginresources.version>3.0.0</maven.pluginresources.version>
 		<maven.pluginenforcer.version>1.4.1</maven.pluginenforcer.version>
